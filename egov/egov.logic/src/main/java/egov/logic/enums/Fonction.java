@@ -1,0 +1,14 @@
+package egov.logic.enums;
+
+public enum Fonction {
+	
+	
+	OFFICIER_ETAT_CIVIL,
+	AGENT_TRIBUNAL,
+	AGENT_CIN_PASSEPORT,
+	AGENT_STEG,
+	AGENT_SONEDE,
+	AGENT_LAPOSTE,
+	AGENT_ATT;
+
+}

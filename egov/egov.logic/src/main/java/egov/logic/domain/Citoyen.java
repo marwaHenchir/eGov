@@ -3,6 +3,7 @@ package egov.logic.domain;
 import org.joda.time.LocalDate;
 
 import egov.logic.enums.Civility;
+import egov.logic.enums.Sex;
 
 /**
  * {@link Citoyen}.
@@ -50,6 +51,8 @@ public class Citoyen {
 	/**
 	 * Default constructor.
 	 */
+	
+	private Sex sex;
 	public Citoyen() {
 		// TODO Auto-generated constructor stub
 	}
@@ -107,8 +110,17 @@ public class Citoyen {
 	 * @param firstName
 	 *            the firstName to set
 	 */
+	
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
+	}
+
+	public Sex getSex() {
+		return sex;
+	}
+
+	public void setSex(Sex sex) {
+		this.sex = sex;
 	}
 
 	/**
@@ -156,11 +168,9 @@ public class Citoyen {
 	@Override
 	public String toString() {
 		return "Citoyen [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", birthdate=" + birthdate
-				+ ", address1=" + address1 + ", address2=" + address2 + ", civility=" + civility + "]";
+				+ ", address1=" + address1 + ", address2=" + address2 + ", civility=" + civility +", sex="+ sex + "]";
 	}
 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#hashCode() */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -172,11 +182,10 @@ public class Citoyen {
 		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
+		result = prime * result + ((sex == null) ? 0 : sex.hashCode());
 		return result;
 	}
 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#equals(java.lang.Object) */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -218,7 +227,13 @@ public class Citoyen {
 				return false;
 		} else if (!lastName.equals(other.lastName))
 			return false;
+		if (sex != other.sex)
+			return false;
 		return true;
 	}
+
+	
+	
+	
 
 }
